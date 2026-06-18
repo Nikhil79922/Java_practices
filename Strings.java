@@ -4,6 +4,27 @@ public class Strings {
         return 20;
     }
 
+    public static void stringBuild(){
+        StringBuilder sb = new StringBuilder("Nikhil");
+
+        sb.insert(0,"OG ");
+        System.out.println(sb);
+
+        sb.setCharAt(7,'Z');
+        System.out.println(sb);
+
+
+        sb.delete(0,2);
+        System.out.println(sb);
+
+
+        sb.append("Hello");
+        sb.append(" n");
+        sb.append(" Yo");
+        System.out.println(sb);
+    }
+
+
 
     public  static  void main(String[] args){
         String name= "Nikhil";
@@ -35,5 +56,7 @@ public class Strings {
 //        for(int i = 0 ; i< description2.length() ; i++){
 //            System.out.println(description2.charAt(i));
 //        }
+
+        stringBuild();
     }
 }
