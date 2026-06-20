@@ -5,11 +5,31 @@ public class BinaryNum {
         //Bitwise operators  in Binary
         // 1) AND (&):- only both true returns true.
         /* 2) OR (|):- true when any one has true.
-        *  3) XOR (^):- true when both are true or both are false.
+        *  3) XOR (^):- true when both are different else return false.
         *  4) binary one's compliment (~):- Convert true into false and false into true
         *  5) binary left shift :- N<<i :- 2<<1 :- it shift the binary towards the left with the given i and add the "0".
         *  6) binary right shift :- N>>i :- 2>>1 :- it shift the binary towards the right with the given i and add the "0".
-        * */
+        *
+        *             AND (&)
+0&0=0
+0&1=0
+1&0=0
+1&1=1
+OR (|)
+0|0=0
+0|1=1
+1|0=1
+1|1=1
+XOR (^)
+0^0=0
+0^1=1
+1^0=1
+1^1=0
+NOT (~)
+~0=1
+~1=0
+        *
+        * * */
 
         //Get the 3rd bit(position 2nd) of a number n. n=0101;
          int n = 5;
