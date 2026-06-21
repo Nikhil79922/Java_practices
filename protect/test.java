@@ -13,5 +13,4 @@ public class test {
         return this.a > this.b ? true : false;
     }
 
-
 }
