@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Abstraction{
 
     public static void main(String[] args){
@@ -27,4 +29,13 @@ class p1 extends Abstract{
         return a + b;
     }
 }
+
+//Generic
+class arr<T> {
+    public void list( T value){
+        ArrayList<T> list = new ArrayList<>();
+        list.add(value);
+    }
+}
+
 
