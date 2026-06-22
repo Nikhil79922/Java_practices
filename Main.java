@@ -3,7 +3,7 @@
 import protect.test;
 
 public class Main extends test{
-    public Main(int a , int b){
+     Main(int a , int b){
         super(a , b);
     }
 
