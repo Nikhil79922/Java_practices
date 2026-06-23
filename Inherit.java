@@ -3,7 +3,8 @@ public class Inherit {
     public static void main(String [] args){
         shape sp = new rectriangle(2,3);
         sp.area();
-      System.out.println(sp.name);
+        sp.area1();
+        System.out.println(sp.toString());
     }
 }
 
@@ -11,6 +12,9 @@ class shape{
     public String name= "Nikhil";
     public void area(){
         System.out.println(" Display Area ");
+    }
+    public void area1(){
+        System.out.println(" Display Area1 ");
     }
 }
 
