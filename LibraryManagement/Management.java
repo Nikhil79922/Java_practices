@@ -1,6 +1,8 @@
+package LibraryManagement;
 import java.util.ArrayList;
 
-public class LibraryManagement {
+
+public class Management {
 
     public static void main(String[] args) {
 
