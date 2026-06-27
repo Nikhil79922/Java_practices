@@ -46,6 +46,16 @@ public class BinaryTree {
             System.out.print(root.val + " ");
             InOrderTranverse(root.right);
         }
+
+        public void PostOrderTranverse(Node root) {
+            if (root == null) {
+                System.out.print(-1 + " ");
+                return;
+            }
+            PostOrderTranverse(root.left);
+            PostOrderTranverse(root.right);
+            System.out.print(root.val + " ");
+        }
     }
 
     public static void main(String[] args) {
@@ -58,6 +68,10 @@ public class BinaryTree {
 
         System.out.print("InOrder Traversal :- ");
         tree.InOrderTranverse(root);
+        System.out.println("");
+
+        System.out.print("PostOrder Traversal :- ");
+        tree.PostOrderTranverse(root);
         System.out.println("");
     }
 }
