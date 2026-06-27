@@ -27,14 +27,24 @@ public class BinaryTree {
             return newNode;
         }
 
-        public void PreOrderTranverse(Node root){
-            if(root == null){
-                System.out.print( -1 + " ");
+        public void PreOrderTranverse(Node root) {
+            if (root == null) {
+                System.out.print(-1 + " ");
                 return;
             }
-            System.out.print( root.val + " ");
+            System.out.print(root.val + " ");
             PreOrderTranverse(root.left);
             PreOrderTranverse(root.right);
+        }
+
+        public void InOrderTranverse(Node root) {
+            if (root == null) {
+                System.out.print(-1 + " ");
+                return;
+            }
+            InOrderTranverse(root.left);
+            System.out.print(root.val + " ");
+            InOrderTranverse(root.right);
         }
     }
 
@@ -42,7 +52,12 @@ public class BinaryTree {
         int node[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BT tree = new BT();
         Node root = tree.buildTree(node);
-tree.PreOrderTranverse(root);
+        System.out.print("PreOrder Traversal :- ");
+        tree.PreOrderTranverse(root);
+        System.out.println("");
 
+        System.out.print("InOrder Traversal :- ");
+        tree.InOrderTranverse(root);
+        System.out.println("");
     }
 }
