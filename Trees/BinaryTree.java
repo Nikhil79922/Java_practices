@@ -108,6 +108,28 @@ public class BinaryTree {
             return leftCount + rightCount + 1;
         }
 
+        public int totalSumOfNode(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            int leftCount = totalSumOfNode(root.left);
+            int rightCount = totalSumOfNode(root.right);
+
+            return leftCount + rightCount + root.val ;
+        }
+
+        public int heightOfTree(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            int leftCount = heightOfTree(root.left);
+            int rightCount = heightOfTree(root.right);
+
+            return leftCount + rightCount + root.val ;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -134,5 +156,10 @@ public class BinaryTree {
         System.out.print("Node Count Traversal :- ");
         int totalCount = tree.countNodes(root);
         System.out.println(totalCount);
+
+
+        System.out.print("Node Sum Traversal :- ");
+        int totalSum = tree.totalSumOfNode(root);
+        System.out.println(totalSum);
     }
 }
