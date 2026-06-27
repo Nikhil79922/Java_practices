@@ -83,6 +83,31 @@ public class BinaryTree {
                  }
              }
         }
+
+        static int count=0;
+        public int countNodes(Node root){
+            if(root == null){
+                return count;
+            }else{
+                count++;
+            }
+            countNodes(root.left);
+            countNodes(root.right);
+            return  count;
+        }
+
+        //Better way to count Nodes
+        public int countNodesII(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            int leftCount = countNodes(root.left);
+            int rightCount = countNodes(root.right);
+
+            return leftCount + rightCount + 1;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -104,5 +129,10 @@ public class BinaryTree {
         System.out.println("LevelOrder Traversal :- ");
         tree.LevelOrderTraversal(root);
         System.out.println("");
+
+
+        System.out.print("Node Count Traversal :- ");
+        int totalCount = tree.countNodes(root);
+        System.out.println(totalCount);
     }
 }
