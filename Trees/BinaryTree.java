@@ -1,5 +1,8 @@
 package Trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
     static class Node {
         int val;
@@ -56,6 +59,30 @@ public class BinaryTree {
             PostOrderTranverse(root.right);
             System.out.print(root.val + " ");
         }
+
+        //Level Order Traversal;
+        public void LevelOrderTraversal(Node root) {
+            if (root == null) return;
+             Queue<Node> q = new LinkedList<>();
+             q.offer(root);
+             q.offer(null);
+
+             while(!q.isEmpty()){
+                 Node level = q.poll();
+                 if(level == null){
+                     System.out.println(" ");
+
+                     if (q.isEmpty()) {
+                         break;
+                     };
+                     q.offer(null);
+                 }else{
+                     System.out.print(level.val + " ");
+                     if(level.left != null) q.offer(level.left);
+                     if(level.right != null) q.offer(level.right);
+                 }
+             }
+        }
     }
 
     public static void main(String[] args) {
@@ -72,6 +99,10 @@ public class BinaryTree {
 
         System.out.print("PostOrder Traversal :- ");
         tree.PostOrderTranverse(root);
+        System.out.println("");
+
+        System.out.println("LevelOrder Traversal :- ");
+        tree.LevelOrderTraversal(root);
         System.out.println("");
     }
 }
