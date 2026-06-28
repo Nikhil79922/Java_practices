@@ -123,11 +123,19 @@ public class BinaryTree {
             if (root == null) {
                 return 0;
             }
-
             int leftCount = heightOfTree(root.left);
             int rightCount = heightOfTree(root.right);
-
             return Math.max(leftCount , rightCount ) + 1;
+        }
+
+        public int diameterOfTree(Node root) {
+            if (root == null) {
+                return 0;
+            }
+            int leftdiameter = diameterOfTree(root.left);
+            int rightRight = diameterOfTree(root.right);
+            int totalHeightFromNode = heightOfTree(root.left) + heightOfTree(root.right) + 1;
+            return Math.max(Math.max(leftdiameter , rightRight) , totalHeightFromNode);
         }
 
     }
@@ -166,5 +174,9 @@ public class BinaryTree {
         System.out.print("Nodes total Height  Traversal :- ");
         int totalHeight = tree.heightOfTree(root);
         System.out.println(totalHeight);
+
+        System.out.print("Diameter of Tree , longest path between any two nodes :- ");
+        int diameter = tree.diameterOfTree(root);
+        System.out.println(diameter);
     }
 }
